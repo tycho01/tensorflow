@@ -224,7 +224,9 @@ def random_uniform(shape,
   """
   dtype = dtypes.as_dtype(dtype)
   if dtype not in (dtypes.float16, dtypes.bfloat16, dtypes.float32,
-                   dtypes.float64, dtypes.int32, dtypes.int64):
+                   dtypes.float64, dtypes.int8, dtypes.int16, dtypes.int32,
+                   dtypes.int64, dtypes.uint8, dtypes.uint16, dtypes.uint32,
+                   dtypes.uint64):
     raise ValueError("Invalid dtype %r" % dtype)
   if maxval is None:
     if dtype.is_integer:
